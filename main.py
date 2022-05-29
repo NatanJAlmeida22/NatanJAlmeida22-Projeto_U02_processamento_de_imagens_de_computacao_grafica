@@ -87,6 +87,7 @@ class MyGame(arcade.Window):
 
         # Set up the player info
         self.player_sprite = None
+        self.enemy_sprite = None
         self.score = 0
         self.set_mouse_visible(False)
         self.explosion_texture_list = []
@@ -161,7 +162,7 @@ class MyGame(arcade.Window):
 
         # Create coins
         for i in range(10):
-            coin = arcade.Sprite(":resources:images/animated_characters/zombie/zombie_fall.png", 0.35)
+            coin = arcade.Sprite(":resources:images/space_shooter/meteorGrey_big1.png", 0.35)
             coin.center_x = random.randrange(100, 700)
             coin.center_y = random.randrange(100, 500)
             while coin.change_x == 0 and coin.change_y == 0:
@@ -198,6 +199,7 @@ class MyGame(arcade.Window):
         self.coin_list.draw()
         self.explosions_list.draw()
         self.coin_list.draw()
+        self.bullet_list.draw()
 
     def on_mouse_press(self, x, y, button, modifiers):
         """
@@ -208,7 +210,7 @@ class MyGame(arcade.Window):
         arcade.sound.play_sound(self.gun_sound)
 
         # Create a bullet
-        bullet = arcade.Sprite(":resources:images/space_shooter/laserBlue01.png", SPRITE_SCALING_LASER)
+        bullet = arcade.Sprite(":resources:images/space_shooter/laserRed01.png", SPRITE_SCALING_LASER)
 
         # The image points to the right, and we want it to point up. So
         # rotate it.
@@ -218,8 +220,10 @@ class MyGame(arcade.Window):
         bullet.change_y = BULLET_SPEED
 
         # Position the bullet
-        bullet.center_x = self.player_sprite.center_x
-        bullet.bottom = self.player_sprite.top
+        start_x = self.player_sprite.center_x
+        start_y = self.player_sprite.center_y
+        bullet.center_x = start_x
+        bullet.center_y = start_y
 
         # Add the bullet to the appropriate lists
         self.bullet_list.append(bullet)
