@@ -118,12 +118,6 @@ class MyGame(arcade.Window):
 
         self.score = 0
 
-        # Image from kenney.nl
-        self.player_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
-                                           SPRITE_SCALING_PLAYER)
-        self.player_sprite.center_x = 50
-        self.player_sprite.center_y = 70
-        self.player_list.append(self.player_sprite)
 
         # -- Set up the walls
 
@@ -166,7 +160,7 @@ class MyGame(arcade.Window):
 
         # Create coins
         for i in range(10):
-            coin = arcade.Sprite(":resources:images/items/coinGold.png", 0.25)
+            coin = arcade.Sprite(":resources:images/animated_characters/zombie/zombie_fall.png", 0.35)
             coin.center_x = random.randrange(100, 700)
             coin.center_y = random.randrange(100, 500)
             while coin.change_x == 0 and coin.change_y == 0:
