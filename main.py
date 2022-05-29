@@ -7,6 +7,7 @@ SPRITE_SCALING = 0.5
 SPRITE_SCALING_LASER = 0.8
 SPRITE_SCALING_PLAYER = 0.5
 COIN_COUNT = 50
+GRAVITY = 0
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -179,6 +180,10 @@ class MyGame(arcade.Window):
         self.player_sprite.center_y = SCREEN_HEIGHT / 2
         self.player_list.append(self.player_sprite)
 
+        # Create our physics engine
+        self.physics_engine = arcade.PhysicsEngineSimple(self.player_sprite, self.wall_list)
+
+
     def on_draw(self):
         """
         Render the screen.
@@ -285,6 +290,7 @@ class MyGame(arcade.Window):
                     coin.bottom = wall.top
             if len(walls_hit) > 0:
                 coin.change_y *= -1
+        self.physics_engine.update()
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed. """
