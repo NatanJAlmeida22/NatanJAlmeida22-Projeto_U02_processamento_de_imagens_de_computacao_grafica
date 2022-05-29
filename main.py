@@ -106,7 +106,7 @@ class MyGame(arcade.Window):
         self.hit_sound = arcade.sound.load_sound(":resources:sounds/explosion2.wav")
 
         # Set the background color
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.STAR_COMMAND_BLUE)
 
     def setup(self):
         """ Set up the game and initialize the variables. """
@@ -162,7 +162,7 @@ class MyGame(arcade.Window):
 
         # Create coins
         for i in range(10):
-            coin = arcade.Sprite(":resources:images/space_shooter/meteorGrey_big1.png", 0.35)
+            coin = arcade.Sprite(":resources:images/space_shooter/meteorGrey_big2.png", 0.35)
             coin.center_x = random.randrange(100, 700)
             coin.center_y = random.randrange(100, 500)
             while coin.change_x == 0 and coin.change_y == 0:
@@ -172,7 +172,7 @@ class MyGame(arcade.Window):
             self.coin_list.append(coin)
 
         # Set the background color
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.STAR_COMMAND_BLUE)
 
         # Set up the player
         self.player_sprite = Player(":resources:images/space_shooter/playerShip1_green.png",
@@ -214,16 +214,14 @@ class MyGame(arcade.Window):
 
         # The image points to the right, and we want it to point up. So
         # rotate it.
-        bullet.angle = 90
+        bullet.angle = 0
 
         # Give it a speed
         bullet.change_y = BULLET_SPEED
 
         # Position the bullet
-        start_x = self.player_sprite.center_x
-        start_y = self.player_sprite.center_y
-        bullet.center_x = start_x
-        bullet.center_y = start_y
+        bullet.center_x = self.player_sprite.center_x
+        bullet.bottom = self.player_sprite.top
 
         # Add the bullet to the appropriate lists
         self.bullet_list.append(bullet)
