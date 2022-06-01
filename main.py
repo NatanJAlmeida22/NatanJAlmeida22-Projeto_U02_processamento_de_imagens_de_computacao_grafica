@@ -11,7 +11,7 @@ GRAVITY = 0
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
-SCREEN_TITLE = "Move Sprite by Angle Example"
+SCREEN_TITLE = "Perdidos em Andrômeda"
 
 MOVEMENT_SPEED = 5
 ANGLE_SPEED = 5
