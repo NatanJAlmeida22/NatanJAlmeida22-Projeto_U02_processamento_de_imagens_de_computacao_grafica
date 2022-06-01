@@ -24,9 +24,9 @@ Elaborar um jogo 2D em Python utilizando os conhecimentos adquiridos na discipli
 Etapas da entrega:
 
 30/05 - Fazer a base do jogo para mostar o andarmento do projeto em sala de aula [✔]<br>
-02/05 - Começar a fazer a documentação do jogo e a motangem dos slides.<br>
-03/05 - Terminar as pêndencias, para o encaminhamento da finalização.<br>
-04/05 - Fazer o vídeo mostrando a gameplay do jogo finalizado.<br>
+31/05 - Começar a fazer a documentação do jogo e a motangem dos slides.[✔]<br>
+31/06 - Terminar as pêndencias, para o encaminhamento da finalização.<br>
+31/06 - Fazer o vídeo mostrando a gameplay do jogo finalizado.<br>
 06/05 - Apresentação final em sala de aula.<br>
 
 ## Tecnologia e Bibliotecas 💻
